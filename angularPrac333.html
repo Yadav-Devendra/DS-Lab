@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <!-- <div ng-app="" ng-init="firstName='devendra'">
+       <p>Enter Your name: <input type="text" name="name" id="name" ng-model="name"/></p><br>
+       Your name is : {{name}} <br>
+       firstName is :{{firstName}}<br>
+       Hello: <span ng-bind="name"></span>
+    </div> -->
+    <!-- <div ng-app="" ng-init="country=['USA', 'India', 'UK']; names=['devendra', 'rahul']">
+        <p>Looping through the array</p>
+        <ul>
+            <li ng-repeat="x in country">
+                {{"Country " + x}}
+            </li>
+        </ul>
+        <ul>
+            <li ng-repeat="x in names">
+                {{x}}
+            </li>
+        </ul>
+    </div> -->
+    <!-- <div ng-app="" ng-init="nums=[1,2,3,4,5,6,7,8,9,10];firstName='devendra';lastName='yadav'">
+        <p>my first expression: {{5 + 5}}</p><br>
+        2 * 2 = {{4}}
+        <ul>
+            <li ng-repeat="x in nums">
+                2 X {{x}} = {{2*x}}
+            </li>
+        </ul>
+        fullname :{{firstName + " " + lastName}}
+    </div> -->
+    <!-- <div ng-app="" ng-init="car={type: 'ford', model: 'explorer', color:white}; marks=[90,80,88]">
+        <p>Model of the car is :{{car.model}}</p><br>
+        average marks :{{(marks[0]+marks[1]+marks[2])/3}}
+
+    </div> -->
+    <!-- <div ng-app=""
+        ng-init="quantity=1; cost=30; address='Mumbai';marks=[80,90,75,73,60];student={firstName:'devendra',rollNo: 63}">
+        <p>{{"Hello "+student.firstName}}</p>
+        <p ng-bind="address"></p>
+        <p>Expense on books = {{quantity* cost}}</p>
+        <p>Math marks is :{{marks[2]}}</p>
+    </div> -->
+    <!-- <div ng-app="myApp" ng-init="quantity=30; price=5.683" ng-controller="datCtrl">
+        <p>Total :{{quantity * price | currency: USA :3}}</p>
+        <p> {{quantity* price | number : 4}}</p>
+        <p>Date :{{today | date : 'longDate' : 'shortTime'}}</p>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('datCtrl', function($scope) {
+            $scope.today = new Date();
+        });
+        </script> -->
+    <!-- <div ng-app="myApp" ng-controller="jsCtrl">
+        <h1>Customer:</h1>
+        <pre>{{customer | json}}</pre>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('jsCtrl', function ($scope) {
+            $scope.customer = {
+                "name": "Alfreds Futterkiste",
+                "city": "Berlin",
+                "country": "Germany"
+            };
+        });
+    </script> -->
+    <!-- <div ng-app="">
+        <p>{{"Firstname is : " + 'devendra' | uppercase}}</p>
+        <p>{{"Firstname is : " + 'devendra' | lowercase}}</p>
+        <p>{{[1,2,3,4,5,6,7,8,9,10] | limitTo :4: 1 }}</p>
+        <p>{{[8,4,7,9,6,3,2,1,0,45,88,22] | orderBy : '-' }}</p>
+    </div> -->
+    <!-- <div ng-app="myApp" ng-init="names=['devendra', 'rahul']" ng-controller="myCtrl">
+        <ul>
+            <li ng-repeat="name in names">
+                {{name}}
+            </li>
+        </ul><br>
+        Enter firstname :<input type="text" name="" id="" ng-model="firstName"><br>
+        Enter lastname :<input type="text" name="" id="" ng-model="lastName"><br>
+        <p>FirstName is :{{firstName}}</p>
+        <p>LastName is : {{lastName}}</p>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl' ,($scope) => {
+            $scope.firstName = 'devendra';
+            $scope.lastName = 'yadav';
+        });
+    </script> -->
+    <!-- <div ng-app="">
+        <p ng-style="{'color': 'white','background-color' : 'coral' , 'font-size': '60px'}">Hello World!</p>
+    </div> -->
+    <!-- <div ng-app="myApp" ng-controller="myCtrl" ng-init="count=0">
+        <p ng-style="{'color': 'white','background-color' : 'coral' , 'font-size': '60px'}">Hello World!</p>
+        <p ng-style="obj">Hello</p>
+        <p ng-style="obj" ng-mouseover="count = count + 1" >{{count}}</p>
+        <input type="text" ng-style="obj" ng-keypress="count = count + 1">
+        <input type="text" ng-style="obj" ng-keyup="count = count + 1">
+        <input type="text" ng-style="obj" ng-keydown="count = count + 1">
+        <test-directive ></test-directive>
+        <p test-directive></p>
+        <p class="test-directive"></p>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', ($scope) => {
+            $scope.obj = {
+                'color': 'white',
+                'background-color': 'coral',
+                'font-size': '60px'
+            }
+        });
+        app.directive("testDirective", () => {
+            return{
+                restrict: 'ECMA',
+                replace: true,
+                template: "<h1>Hello world!!</h1>"
+            };
+        });
+    </script> -->
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <input type="text" name="" id="" ng-model="message"><br>
+        <span ng-bind="message"></span><br>
+        {{message}}
+    </div>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',($scope) => {
+            $scope.message = "hello world";
+        });
+    </script> -->
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        Enter fname: <input type="text" ng-model="fname"><br>
+        Enter lname: <input type="text" ng-model="lname"><br>
+        Full name is :{{fullName()}}<br>
+        <button ng-click="message('Hello World!!')">Show message</button><br>
+        name of student is :{{student.name}}
+    </div> -->
+    <!-- <div ng-app="myNgApp">
+        <div ng-controller="parentController">
+            Message: {{message1}}
+            <div ng-controller="childController">
+                Parent Message: {{message1}} </br>
+                Child Message: {{message2}}
+            </div>
+            Child Message: {{message2}}
+        </div>
+    </div> -->
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        Enter fname: <input type="text" ng-model="fname"><br>
+        Enter lname: <input type="text" ng-model="lname"><br>
+        Full name is :{{fullName()}}<br>
+        <button ng-click="message('Hello World!!')">Show message</button><br>
+        name of student is :{{student.name}}<br>
+        <ul>
+            <li ng-repeat="name in names">
+                {{name.name + " " +name.country}}
+            </li>
+        </ul>
+        <p>The rootScope's favorite color:</p>
+        <h1>{{color}}</h1>
+        <p>The scope of the controller's favorite color:</p>
+        <h1>{{color}}</h1>
+        <p>The rootScope's favorite color is still:</p>
+        <h1>{{color}}</h1>
+    </div> -->
+    <!-- <p>The rootScope's favorite color:</p>
+    <h1>{{color}}</h1>
+    <div ng-controller="myCtrl">
+        <p>The scope of the controller's favorite color:</p>
+        <h1>{{color}}</h1>
+    </div>
+    <p>The rootScope's favorite color is still:</p>
+    <h1>{{color}}</h1>
+    <script>
+        var app = angular.module('myApp', []);
+        app.run(($rootScope => {
+            $rootScope.color = 'blue';
+        }));
+        app.controller('myCtrl', ($scope) => {
+            $scope.fname = 'devendra';
+            $scope.lname = 'yadav';
+            $scope.names = [
+                { name: 'Jani', country: 'Norway' },
+                { name: 'Hege', country: 'Sweden' },
+                { name: 'Kai', country: 'Denmark' }
+            ];
+            $scope.fullName = () => {
+                return $scope.fname + " " + $scope.lname;
+            };
+            $scope.message = (msg) => {
+                alert(msg);
+            };
+            $scope.student = {
+                name: "devendra",
+                roll: 63,
+            };
+            $scope.color = 'red';
+        });
+        // var ngApp = angular.module('myNgApp', []);
+        // ngApp.controller('parentController', function ($scope) {
+        //     $scope.message1 = "This is parentController";
+        // });
+        // ngApp.controller('childController', function ($scope) {
+        //     $scope.message2 = "This is childController";
+        // });
+    </script> -->
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <form>
+            Checkbox 1:<input type="checkbox" name="" id="" ng-model="myVar">
+            <button ng-click="myVar = !myVar">Click!</button><br>
+            Radio Button 1<input type="radio" name="" value="first" id="" ng-model="rVar">
+            Radio Button 2<input type="radio" name="" id="" value="second" ng-model="rVar">
+            Radio Button 3<input type="radio" name="" id="" value="third" ng-model="rVar">
+            <select name="" id="" ng-model="sVar">
+                <option value=""></option>
+                <option value="dogs">dogs</option>
+                <option value="cats">cats</option>
+                <option value="cars">cars</option>
+            </select>
+            <select name="" id="" ng-model=""></select>
+        </form>
+    </div>
+    <script>
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',($scope) => {
+            $scope.myVar = true;
+            $scope.rVar = "first";
+            $scope.sVar = "dogs";
+        });
+    </script>
+</body>
+
+</html>
